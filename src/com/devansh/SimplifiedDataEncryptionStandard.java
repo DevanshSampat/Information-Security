@@ -27,7 +27,7 @@ public class SimplifiedDataEncryptionStandard {
     public static void main(String[] args) {
         //Instantiating the Imagecodecs class
         //Reading the Image from the file
-        String file ="C:\\Users\\DEVANSH\\IdeaProjects\\InformationSecurity\\src\\com\\devansh\\images\\devansh.jpg";
+        String file ="C:\\Users\\DEVANSH\\IdeaProjects\\InformationSecurity\\src\\com\\devansh\\images\\jethalal.jpg";
         BufferedImage img = null;
         try {
             img = ImageIO.read(new File(file));

@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="OpenCV">
+    <CLASSES>
+      <root url="jar://D:/SDKs/Java/opencv/build/java/opencv-455.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://D:/SDKs/Java/opencv/build/java/x64" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://D:/SDKs/Java/opencv/build/java/opencv-455.jar!/" />
+      <root url="jar://D:/SDKs/Java/opencv/build/java/opencv-455.jar!/" />
+    </SOURCES>
+  </library>
+</component>

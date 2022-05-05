@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class SimplifiedDataEncryptionStandard {
 
     static{ System.loadLibrary(Core.NATIVE_LIBRARY_NAME); }
-
+    
     private static int[] key1;
     private static int[] key2;
     private static int[] key;
@@ -23,6 +23,7 @@ public class SimplifiedDataEncryptionStandard {
     private static int[][] s1;
     private static int[] cipherText;
     private static int[] decryptedText;
+    private static long time;
 
     public static void main(String[] args) {
         //Instantiating the Imagecodecs class
@@ -76,6 +77,7 @@ public class SimplifiedDataEncryptionStandard {
                 return;
             }
         }
+        time = System.currentTimeMillis();
         encryptImage(img);
 //        encryption(plainText);
 //        decryption(cipherText);
@@ -126,6 +128,9 @@ public class SimplifiedDataEncryptionStandard {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        long diff = System.currentTimeMillis() - time;
+        System.out.println("Successfully encrypted in "+diff/1000+"s "+diff%1000+"ms");
+        time = System.currentTimeMillis();
         decryptImage(img);
     }
 
@@ -167,6 +172,8 @@ public class SimplifiedDataEncryptionStandard {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        long diff = System.currentTimeMillis() - time;
+        System.out.println("Successfully decrypted in "+diff/1000+"s "+diff%1000+"ms");
     }
 
 

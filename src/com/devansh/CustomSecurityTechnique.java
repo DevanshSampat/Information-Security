@@ -148,7 +148,7 @@ public class CustomSecurityTechnique {
         }
         pointer = 0;
         for(byte[] byteData: block) {
-            applySdesEncryption(image, byteData);
+            applySdesEncryption(byteData);
         }
         data = new byte[128*(block.length)];
         for(int i=0;i<block.length;i++) System.arraycopy(block[i],0,data,128*i,128);
@@ -173,10 +173,10 @@ public class CustomSecurityTechnique {
         }
     }
 
-    private static void applySdesEncryption(BufferedImage image, byte[] data) {
+    private static void applySdesEncryption(byte[] data) {
         for(int i=0;i< data.length;i=i+8) {
             keyForSdes = new byte[10];
-            int begin = pointer%key.length;
+            int begin = pointer;
             for(int j=begin;j<begin+8;j++) {
                 keyForSdes[j-begin] = key[j];
             }
@@ -185,6 +185,7 @@ public class CustomSecurityTechnique {
             byte[] cipherText = encryption(plainText);
             for(int j=0;j<8;j++) data[i+j] = cipherText[j];
             pointer = pointer+8;
+            pointer = pointer % key.length;
         }
     }
 

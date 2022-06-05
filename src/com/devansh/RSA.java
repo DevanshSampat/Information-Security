@@ -36,9 +36,9 @@ public class RSA {
     }
 
     public static void encrypt(BufferedImage image, int e, int n) {
-        encryptedMatrix = new int[image.getHeight()][image.getWidth()][3];
-        for(int i = 0; i < image.getHeight(); i++) {
-            for(int j = 0; j < image.getWidth(); j++) {
+        encryptedMatrix = new int[image.getWidth()][image.getHeight()][3];
+        for(int i = 0; i < image.getWidth(); i++) {
+            for(int j = 0; j < image.getHeight(); j++) {
                 int pixel = image.getRGB(i,j);
                 Color color = new Color(pixel, true);
                 int[] data = new int[3];
@@ -69,8 +69,8 @@ public class RSA {
     }
 
     public static void decrypt(BufferedImage image, int d, int n) {
-        for(int i = 0; i < image.getHeight(); i++) {
-            for(int j = 0; j < image.getWidth(); j++) {
+        for(int i = 0; i < image.getWidth(); i++) {
+            for(int j = 0; j < image.getHeight(); j++) {
                 int[] data = new int[3];
                 for(int k = 0; k < 3; k++) data[k] = encryptedMatrix[i][j][k];
                 for(int k = 0; k < 3; k++) {
